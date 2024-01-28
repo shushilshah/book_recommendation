@@ -11,12 +11,19 @@
     <nav class="navbar" style="background-color:aquamarine;">
         <p class="navbar-brand">Book Recommendation</p>
     </nav>
-    <h1 style="font-size: 50px;text-align: center;color: rgb(11, 95, 95);">Top 4 movie</h1>
-    <form style="margin-left: 400px;margin-top: 30px;" method="GET">
+    <h1 style="font-size: 50px;text-align: center;color: rgb(11, 95, 95);">Top 4 books</h1>
+    <form style="margin-left: 400px;margin-top: 30px;" action='/recommend' method="GET">
         <label>Name of book:</label>
-        <input type="text" placeholder="book name" required></br>
-        <label>Recommended books names:</label>
+        <input type="text" id='book_title' placeholder="book_name" name="book_title" required></br>
+        <input type="submit" value="Get recommendation">
 
     </form>
+
+    <h2>Book List:</h2>
+    <ul>
+        {% for book in book_name %}
+            <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

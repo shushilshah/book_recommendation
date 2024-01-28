@@ -8,8 +8,23 @@
         integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
 </head>
 <body>
-    <form>
-        <input type="text" class="control-form">
-    </form>
+    <h1>Book Recommendation for "{{ user_input }}"</h1>
+
+    {% if recommended_book %}
+       <h2>Top 4 Recommendation:</h2>
+       <ul>
+          {% for book in recommended_book %}
+            <li>
+                <strong>TItle:</strong> {{book.Title}}</br>
+                <strong>Author:</strong> {{book.Genre}}</br>
+            </li>
+          {% endfor %}
+
+       </ul>
+    {% else %}
+        <p>No recommendation found</p>
+    {% endif %}
+
+    <p><a href="/">Go back</a></p>
 </body>
 </html>
